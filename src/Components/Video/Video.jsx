@@ -12,7 +12,7 @@ const Video = () => {
                 </div>
                 <iframe
                     className="w-full h-[300px] md:h-[500px]"
-                    src="https://www.youtube-nocookie.com/embed/gUdtW1nIdsE?rel=0&loop=1"
+                    src="https://www.youtube-nocookie.com/embed/86IkOcBAf0I?rel=0&loop=1"
                     title="YouTube video player"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
