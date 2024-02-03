@@ -32,8 +32,8 @@ const Footer = () => {
             </footer>
             <div className="bg-gray-200">
                 <div className="border-b-2 border-gray-50"></div>
-                <div className="flex  justify-between max-w-6xl mx-auto items-center">
-                    <p className="font-medium">Developed by <br />Md. Al Amin Mollik</p>
+                <div className="flex flex-col md:flex-row justify-between max-w-6xl mx-auto items-center">
+                    <p className="font-medium text-center md:text-left">Developed by <br />Md. Al Amin Mollik</p>
                     <p className=" flex items-center justify-center gap-2 font-medium">Lets build your Dream Website together  <FaLongArrowAltRight /></p>
                     <div className="flex gap-2">
                         <a target="_blank" href="https://www.linkedin.com/in/md-al-amin-mollik/" rel="noreferrer">
