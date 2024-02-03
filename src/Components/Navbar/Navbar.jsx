@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
 
     const isAdmin = "admin";
-    const user = true;
+    const user = false;
     return (
         <div>
             <div className="navbar bg-gray-50 shadow-xl">
