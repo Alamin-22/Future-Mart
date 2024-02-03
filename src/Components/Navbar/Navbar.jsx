@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
 
-    const isAdmin = true;
-    const user = false;
+    const isAdmin = "admin";
+    const user = true;
     return (
         <div>
             <div className="navbar bg-gray-50 shadow-xl">
@@ -46,7 +46,10 @@ const Navbar = () => {
                                                         <span className="badge">New</span>
                                                     </a>
                                                 </li>
-                                                <li><Link>Dashboard</Link></li>
+                                                {
+                                                    isAdmin === "admin" &&
+                                                    <li><Link>Dashboard</Link></li>
+                                                }
                                                 <li><a>Logout</a></li>
                                             </ul>
                                         </div>
