@@ -6,7 +6,7 @@ const CheckOut = () => {
     let totalPrice = price + 120;
 
     return (
-        <div className="">
+        <div className=" mb-10">
             <div className="md:flex gap-3  ">
                 <div className=" w-full ">
                     <div className="card shrink-0 w-full h-full  bg-base-200">
@@ -97,7 +97,7 @@ const CheckOut = () => {
                                                 </div>
                                             </td>
                                             <td>M14</td>
-                                            <td className="text-lg">{price} Tk</td>
+                                            <td className="text-lg">1X {price} Tk</td>
                                         </tr>
                                         {/* row 2 */}
                                         <tr className="bg-zinc-200">
@@ -139,7 +139,7 @@ const CheckOut = () => {
                                 <button className="btn btn-lg text-gray-50 btn-error w-full">
                                     <IoIosLock className="text-3xl" />
                                     Place Order
-                                    Total: 2530 Tk
+                                    Total: {totalPrice} Tk
                                 </button>
                             </div>
                         </form>

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
+import logo from "../../assets/Images/logo-removebg-preview.png"
 
 const Navbar = () => {
 
@@ -11,7 +12,10 @@ const Navbar = () => {
             <div className="navbar bg-gray-50 shadow-xl">
                 <div className="navbar max-w-7xl mx-auto">
                     <div className="flex-1">
-                        <div className="btn btn-ghost text-lg">Future Mart</div>
+                        <div className="btn btn-ghost text-lg">
+                            <img className="w-9 h-9" src={logo} alt="logo" />
+                            Future Mart
+                        </div>
                     </div>
                     <div className="flex-none">
                         <div className="dropdown dropdown-end">
