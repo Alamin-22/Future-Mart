@@ -5,6 +5,7 @@ import Layout from "../Layout/Layout";
 import Error from "../Page/Error/Error";
 import Home from "../Page/Home/Home";
 import Login from "../Page/Authentication/Login/Login";
+import SignUp from "../Page/Authentication/SingUp/SingUp";
 
 const router = createBrowserRouter([
     {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
     {
         path: "/singIn",
         element: <Login></Login>
+    },
+    {
+        path: "/singUp",
+        element: <SignUp></SignUp>
     }
 ]);
 

@@ -5,6 +5,7 @@ const Navbar = () => {
 
     const isAdmin = "non";
     const { user, logOut } = useAuth();
+
     return (
         <div>
             <div className="navbar bg-gray-50 shadow-xl">
@@ -37,13 +38,13 @@ const Navbar = () => {
                                         <div className="dropdown dropdown-end">
                                             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                                 <div className="w-10 rounded-full">
-                                                    <img alt="Tailwind CSS Navbar component" src="https://i.ibb.co/bFq9X83/user.png" />
+                                                    <img alt="Tailwind CSS Navbar component" src={user?.photoURL} />
                                                 </div>
                                             </div>
                                             <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                                                 <li>
                                                     <p className="justify-between">
-                                                        Md. Al Amin Mollik
+                                                        {user?.displayName}
                                                     </p>
                                                 </li>
                                                 {
