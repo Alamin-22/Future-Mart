@@ -8,7 +8,7 @@ const Home = () => {
             <Video></Video>
             <h2 className="text-center text-3xl md:text-5xl font-semibold  my-5"> আমাদের পণ্য </h2>
             <Gallery></Gallery>
-            <h2 className="text-center text-3xl text-red-600 md:text-5xl font-semibold  my-5"> অর্ডার করতে সঠিক তথ্য দিয়ে নিচের ফর্ম পূরন করুন</h2>
+            <h2 className="text-center text-3xl text-red-600 md:text-4xl font-semibold  my-5"> অর্ডার করতে সঠিক তথ্য দিয়ে নিচের ফর্ম পূরন করুন</h2>
             <CheckOut></CheckOut>
         </div>
     );
