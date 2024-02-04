@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
 
 const Navbar = () => {
 
-    const isAdmin = "admin";
-    const user = false;
+    const isAdmin = "non";
+    const { user, logOut } = useAuth();
     return (
         <div>
             <div className="navbar bg-gray-50 shadow-xl">
@@ -49,7 +50,11 @@ const Navbar = () => {
                                                     isAdmin === "admin" &&
                                                     <li><Link>Dashboard</Link></li>
                                                 }
-                                                <li><a>Logout</a></li>
+                                                <li>
+                                                    <button onClick={logOut} className="text-red-600 font-semibold">
+                                                        Logout
+                                                    </button>
+                                                </li>
                                             </ul>
                                         </div>
                                     </>

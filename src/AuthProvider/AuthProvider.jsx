@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
-import { useState, createContext, useEffect } from 'react';
-import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import { createContext, useEffect, useState } from 'react';
 import auth from '../Firebase/firebase.config';
+import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 
-export const AuthContext = createContext(null);
+export const AuthContext = createContext([null]);
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);

@@ -3,11 +3,13 @@ import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 import image from "../../../assets/Images/loginImage.jpg"
+import useAuth from "../../../Hooks/useAuth";
 
 
 const Login = () => {
     const navigate = useNavigate();
     const axiosPublic = useAxiosPublic();
+    const { GoogleSingIn, Login } = useAuth()
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -57,6 +59,8 @@ const Login = () => {
                     photo: res.user?.photoURL,
                     Status: "Active",
                 }
+                Swal.fire({ title: "Success", text: "User Successfully Logged in", icon: "success" });
+                navigate("/")
                 axiosPublic.post("/users", info)
                     .then(res => {
                         if (res.data.insertedId) {
@@ -97,7 +101,7 @@ const Login = () => {
                             Welcome back!
                         </p>
 
-                        <button onClick={() => handleSocialLogin()} className="btn w-full bg-[#219ebc] hover:bg-[#3c738f] border-none text-white">
+                        <button onClick={() => handleSocialLogin(GoogleSingIn)} className="btn w-full bg-[#219ebc] hover:bg-[#3c738f] border-none text-white">
                             <FcGoogle className="text-3xl" />
                             <span className="text-lg">Sign in with Google</span>
                         </button>
