@@ -1,5 +1,6 @@
 import sizeChart from "../../assets/Images/Size-Chart.jpg"
 import { FaRegHandPointDown } from "react-icons/fa";
+import { Link } from 'react-scroll';
 
 
 const Video = () => {
@@ -21,7 +22,12 @@ const Video = () => {
             </div>
             <div className=" col-span-3 md:col-span-1 ">
                 <div className="w-full flex justify-center md:justify-end">
-                    <button className="btn mt-1 mb-5 md:mb-0  text-xl btn-error text-white">অর্ডার করুন</button>
+                    <Link to="order"
+                        spy={true}
+                        smooth={true}
+                        duration={500}>
+                        <button className="btn mt-1 mb-5 md:mb-0  text-xl btn-error text-white">অর্ডার করুন</button>
+                    </Link>
                 </div>
                 <img className="mx-auto h-[500px] md:mt-9 lg:mt-1" src={sizeChart} alt="T-shirt Size" />
             </div>
