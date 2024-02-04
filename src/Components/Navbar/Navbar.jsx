@@ -55,7 +55,9 @@ const Navbar = () => {
                                     </>
                                     :
                                     <>
-                                        <div className="btn btn-outline btn-sm">Login</div>
+                                        <Link to={"/singIn"}>
+                                            <div className="btn btn-outline btn-sm">Login</div>
+                                        </Link>
                                     </>
                             }
                         </div>

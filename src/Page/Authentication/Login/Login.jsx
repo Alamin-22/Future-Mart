@@ -1,17 +1,13 @@
 import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "../../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
+import image from "../../../assets/Images/loginImage.jpg"
+
+
 const Login = () => {
-    const { GoogleSingIn, Login } = AuthContext();
     const navigate = useNavigate();
     const axiosPublic = useAxiosPublic();
-
-
-
-
-
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -20,7 +16,6 @@ const Login = () => {
         const password = form.get("password");
         // login
         console.log(email, password)
-
 
         Login(email, password)
             .then(res => {
@@ -89,11 +84,11 @@ const Login = () => {
 
     return (
         <div >
-            <div className=" hero flex justify-center items-center min-h-[95vh] " style={{ backgroundImage: 'url(https://i.ibb.co/JcsjxJP/bannere3.jpg)' }}>
+            <div className=" hero flex justify-center items-center min-h-[100vh] " style={{ backgroundImage: 'url(https://i.ibb.co/JcsjxJP/bannere3.jpg)' }}>
 
                 <div className="flex w-full max-w-sm mx-auto overflow-hidden bg-emerald-50 rounded-lg shadow-lg  lg:max-w-4xl">
                     <div className="hidden bg-cover lg:block lg:w-1/2"
-                        style={{ backgroundImage: `url('https://i.ibb.co/X2nH1ww/login.jpg')` }}>
+                        style={{ backgroundImage: `url(${image})` }}>
                     </div>
                     <div className="w-full px-6 py-8 md:px-8 lg:w-1/2">
 
@@ -102,7 +97,7 @@ const Login = () => {
                             Welcome back!
                         </p>
 
-                        <button onClick={() => handleSocialLogin(GoogleSingIn)} className="btn w-full bg-[#219ebc] hover:bg-[#3c738f] border-none text-white">
+                        <button onClick={() => handleSocialLogin()} className="btn w-full bg-[#219ebc] hover:bg-[#3c738f] border-none text-white">
                             <FcGoogle className="text-3xl" />
                             <span className="text-lg">Sign in with Google</span>
                         </button>
@@ -142,8 +137,8 @@ const Login = () => {
 
                         <div className="flex items-center justify-between mt-4">
                             <span className="w-1/5 border-b  md:w-1/4"></span>
-
                             <Link to={"/singUp"} className="text-sm text-gray-700 font-medium uppercase ">or <span className="text-blue-700">sign up</span></Link>
+                            <Link to={"/"} className="text-sm text-gray-700 font-medium uppercase ">or <span className="text-red-600">Go Home</span></Link>
 
                             <span className="w-1/5 border-b  md:w-1/4"></span>
                         </div>
