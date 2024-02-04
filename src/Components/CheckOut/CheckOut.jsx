@@ -8,7 +8,10 @@ const CheckOut = () => {
 
     const onSubmit = (data) => {
         console.log(data)
+
+
     }
+
 
     let price = 950;
     let totalPrice = price + 120;
@@ -16,7 +19,6 @@ const CheckOut = () => {
     return (
         <div className=" mb-10">
             <Element name="order" >
-
                 <form onSubmit={handleSubmit(onSubmit)} className="md:flex gap-3  ">
                     <div className=" w-full ">
                         <div className="card shrink-0 w-full h-full  bg-base-200">
@@ -81,7 +83,8 @@ const CheckOut = () => {
                                         <label className="label">
                                             <span className="label-text font-medium md:text-lg">আপনি কতটি সেট চান লিখুন<span className="text-red-600">*</span></span>
                                         </label>
-                                        <input type="number" {...register("quantity", { required: true })} name="quantity" placeholder="1" className="input input-bordered" />
+                                        <input type="number" {...register("quantity", { required: true })} name="quantity" placeholder="1" pattern="[0-9]*"
+                                            inputMode="numeric" className="input input-bordered" />
                                         {errors.quantity && <span className="text-red-500 text-center">আপনি কতটি কাপড় চান পূরণ করতে হবে</span>}
                                     </div>
                                 </div>
