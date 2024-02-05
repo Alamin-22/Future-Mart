@@ -8,6 +8,7 @@ import Login from "../Page/Authentication/Login/Login";
 import SignUp from "../Page/Authentication/SingUp/SingUp";
 import Dashboard from "../Page/Dashboard/Dashboard";
 import UpdateProduct from "../Page/UpdateProdcut/UpdateProduct";
+import User from "../Page/AllUser/User";
 
 const router = createBrowserRouter([
     {
@@ -26,6 +27,11 @@ const router = createBrowserRouter([
             {
                 path: "/updateProduct",
                 element: <UpdateProduct></UpdateProduct>
+            },
+            {
+                path: "/allUsers",
+                element: <User />,
+
             }
         ]
     },

@@ -5,21 +5,27 @@ import PropTypes from 'prop-types';
 
 
 
-
-
 const CheckOut = ({ Price, img1 }) => {
-    const { register, handleSubmit, formState: { errors } } = useForm()
+    const { register, handleSubmit, watch, formState: { errors } } = useForm()
 
     const onSubmit = (data) => {
         console.log(data)
+
     }
 
-    let totalPrice = Price + 120;
+
+    const calculateTotalPrice = (data) => {
+        const QuantityInt = parseInt(data.quantity);
+        const shippingFee = parseInt(data.shippingFee) || 0; // Set default value to 0 if shippingFee is undefined
+        return QuantityInt * Price + shippingFee;
+    };
+    const quantity = watch("quantity");
+    const totalPrice = calculateTotalPrice({ ...watch() });
 
     return (
         <div className=" mb-10">
             <Element name="order" >
-                <form onSubmit={handleSubmit(onSubmit)} className="md:flex gap-3  ">
+                <form onChange={() => calculateTotalPrice(watch())} onSubmit={handleSubmit(onSubmit)} className="md:flex gap-3  ">
                     <div className=" w-full ">
                         <div className="card shrink-0 w-full h-full  bg-base-200">
                             <div className="card-body ">
@@ -83,7 +89,7 @@ const CheckOut = ({ Price, img1 }) => {
                                         <label className="label">
                                             <span className="label-text font-medium md:text-lg">আপনি কতটি সেট চান লিখুন<span className="text-red-600">*</span></span>
                                         </label>
-                                        <input type="number" {...register("quantity", { required: true })} name="quantity" placeholder="1" pattern="[0-9]*"
+                                        <input type="number" {...register("quantity", { required: true })} name="quantity" placeholder="1" defaultValue={1} pattern="[0-9]*"
                                             inputMode="numeric" className="input input-bordered" />
                                         {errors.quantity && <span className="text-red-500 text-center">আপনি কতটি কাপড় চান পূরণ করতে হবে</span>}
                                     </div>
@@ -121,7 +127,7 @@ const CheckOut = ({ Price, img1 }) => {
                                                     </div>
                                                 </td>
                                                 <td>M14</td>
-                                                <td className="text-lg">{1}X {Price} Tk</td>
+                                                <td className="text-lg">{quantity}X {Price} Tk</td>
                                             </tr>
                                             {/* row 2 */}
                                             <tr className="bg-zinc-200">

@@ -48,7 +48,7 @@ const UpdateProduct = () => {
         <div>
 
             <div className="max-w-4xl mx-auto shadow-2xl">
-                <form onSubmit={HandleUpdateProduct} className=" bg-red-50" >
+                <form onSubmit={HandleUpdateProduct} className=" bg-rose-50" >
                     <div className="p-3 ">
                         <h1 className=" text-xl md:text-3xl text-center font-bold my-2">Product Description Form</h1>
                         {/*Title and Category */}
