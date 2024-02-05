@@ -7,13 +7,11 @@ import PropTypes from 'prop-types';
 
 
 
-const CheckOut = ({ Price }) => {
+const CheckOut = ({ Price, img1 }) => {
     const { register, handleSubmit, formState: { errors } } = useForm()
 
     const onSubmit = (data) => {
         console.log(data)
-
-
     }
 
     let totalPrice = Price + 120;
@@ -118,7 +116,7 @@ const CheckOut = ({ Price }) => {
                                                 <td>
                                                     <div className="avatar">
                                                         <div className="mask mask-squircle w-12 h-12">
-                                                            <img src="https://i.ibb.co/n3C8wDh/img4.jpg" alt="Avatar Tailwind CSS Component" />
+                                                            <img src={img1} alt="Avatar Tailwind CSS Component" />
                                                         </div>
                                                     </div>
                                                 </td>
@@ -183,6 +181,7 @@ const CheckOut = ({ Price }) => {
 
 CheckOut.propTypes = {
     Price: PropTypes.number,
+    img1: PropTypes.string,
 };
 
 export default CheckOut;
