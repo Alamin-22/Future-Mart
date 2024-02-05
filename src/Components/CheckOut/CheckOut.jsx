@@ -127,7 +127,7 @@ const CheckOut = ({ Price, img1 }) => {
                                                     </div>
                                                 </td>
                                                 <td>M14</td>
-                                                <td className="text-lg">{quantity}X {Price} Tk</td>
+                                                <td className="text-lg">{quantity} * {Price} Tk</td>
                                             </tr>
                                             {/* row 2 */}
                                             <tr className="bg-zinc-200">
