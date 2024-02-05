@@ -61,7 +61,7 @@ const User = () => {
 
     return (
         <div>
-            <div className="overflow-x-auto min-h-screen">
+            <div className="overflow-x-auto ">
                 <table className="table table-zebra">
                     {/* head */}
                     <thead className="bg-slate-200 text-gray-700">

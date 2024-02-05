@@ -4,17 +4,23 @@ import { Element } from "react-scroll";
 import PropTypes from 'prop-types';
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import Swal from "sweetalert2";
+import moment from "moment";
 
 
 
 const CheckOut = ({ Price, img1, ProductId }) => {
     const axiosPublic = useAxiosPublic();
     const { register, handleSubmit, watch, reset, formState: { errors } } = useForm()
-
+    let currentDate = moment().format("Do MMM YY");
     const onSubmit = (data) => {
         console.log(data);
 
         data["TotalPrice"] = totalPrice;
+        data["ProductId"] = ProductId;
+        data["OrderDate"] = currentDate;
+
+
+
         axiosPublic.post("/post-booking", data)
             .then(res => {
                 console.log(res.data);
@@ -26,6 +32,7 @@ const CheckOut = ({ Price, img1, ProductId }) => {
                 console.log(err);
             })
     }
+
 
 
     const calculateTotalPrice = (data) => {

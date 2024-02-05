@@ -9,6 +9,7 @@ import SignUp from "../Page/Authentication/SingUp/SingUp";
 import Dashboard from "../Page/Dashboard/Dashboard";
 import UpdateProduct from "../Page/UpdateProdcut/UpdateProduct";
 import User from "../Page/AllUser/User";
+import Bookings from "../Page/Bookings/Bookings";
 
 const router = createBrowserRouter([
     {
@@ -31,7 +32,10 @@ const router = createBrowserRouter([
             {
                 path: "/allUsers",
                 element: <User />,
-
+            },
+            {
+                path: "/bookings",
+                element: <Bookings />
             }
         ]
     },
