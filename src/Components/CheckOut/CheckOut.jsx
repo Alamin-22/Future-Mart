@@ -102,7 +102,8 @@ const CheckOut = ({ Price, img1 }) => {
                                         <label className="label">
                                             <span className="label-text font-medium md:text-lg">আপনি কতটি সেট চান লিখুন<span className="text-red-600">*</span></span>
                                         </label>
-                                        <input type="number" {...register("quantity", { required: true })} name="quantity" placeholder="1" defaultValue={1} pattern="[0-9]*"
+                                        <input type="number" {...register("quantity",
+                                            { required: true, })} name="quantity" min={1} max={10} placeholder="1" defaultValue={1} pattern="[1-9]*"
                                             inputMode="numeric" className="input input-bordered" />
                                         {errors.quantity && <span className="text-red-500 text-center">আপনি কতটি কাপড় চান পূরণ করতে হবে</span>}
                                     </div>
