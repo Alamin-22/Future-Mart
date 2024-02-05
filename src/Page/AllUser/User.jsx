@@ -22,6 +22,7 @@ const User = () => {
             console.log(res.data);
             if (res.data.modifiedCount > 0) {
                 Swal.fire("Congratulations", `${user?.Name} is now Admin!!`, "success");
+                location.reload();
             }
         });
     };
@@ -39,7 +40,7 @@ const User = () => {
         }).then((result) => {
             if (result.isConfirmed) {
                 axiosPublic
-                    .delete(`/users/${user._id}`)
+                    .delete(`/delete-user/${user._id}`)
                     .then((res) => {
                         console.log(res.data);
                         if (res.data.deletedCount) {
@@ -48,6 +49,7 @@ const User = () => {
                                 text: "Your file has been deleted.",
                                 icon: "success",
                             });
+                            location.reload();
                         }
                     })
                     .catch((error) => {

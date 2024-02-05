@@ -203,6 +203,7 @@ const CheckOut = ({ Price, img1, ProductId }) => {
 CheckOut.propTypes = {
     Price: PropTypes.number,
     img1: PropTypes.string,
+    ProductId: PropTypes.string,
 };
 
 export default CheckOut;
