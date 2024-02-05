@@ -57,11 +57,10 @@ const Login = () => {
                     email: res.user?.email,
                     Name: res.user?.displayName,
                     photo: res.user?.photoURL,
-                    Status: "Active",
                 }
                 Swal.fire({ title: "Success", text: "User Successfully Logged in", icon: "success" });
                 navigate("/")
-                axiosPublic.post("/users", info)
+                axiosPublic.post("/post-user", info)
                     .then(res => {
                         if (res.data.insertedId) {
                             Swal.fire({

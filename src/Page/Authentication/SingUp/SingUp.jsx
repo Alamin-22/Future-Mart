@@ -49,9 +49,10 @@ const SignUp = () => {
                         UpdateProfile(Name, photo)
                             .then(() => {
                                 // send to db
-                                axiosPublic.post("/users", info)
+                                axiosPublic.post("/post-user", info)
                                     .then(res => {
                                         if (res.data.insertedId) {
+                                            Swal.fire(`Success`,` User ${Name} is created Successfully`,"success")
                                             navigate('/');
                                         }
                                     })
