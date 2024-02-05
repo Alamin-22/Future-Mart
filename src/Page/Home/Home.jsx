@@ -42,7 +42,7 @@ const Home = () => {
                     :
                     <>
                         <div>
-                            <Video Name={product?.Name}></Video>
+                            <Video Name={product?.Name} YtLink={product?.YtLink}></Video>
                             <h2 className="text-center text-3xl md:text-5xl font-semibold  my-5">
                                 আমাদের পণ্য
                             </h2>

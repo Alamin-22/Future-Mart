@@ -9,7 +9,7 @@ import Swal from "sweetalert2";
 
 const CheckOut = ({ Price, img1 }) => {
     const axiosPublic = useAxiosPublic();
-    const { register, handleSubmit, watch, formState: { errors } } = useForm()
+    const { register, handleSubmit, watch, reset, formState: { errors } } = useForm()
 
     const onSubmit = (data) => {
         console.log(data);
@@ -18,7 +18,8 @@ const CheckOut = ({ Price, img1 }) => {
         axiosPublic.post("/post-booking", data)
             .then(res => {
                 console.log(res.data);
-                Swal.fire("আপনার অর্ডার গ্রহণ করা হয়েছে।", "আমরা খুব শীঘ্রই আপনার সাথে যোগাযোগ করব", "success")
+                Swal.fire("আপনার অর্ডার গ্রহণ করা হয়েছে।", "আমরা খুব শীঘ্রই আপনার সাথে যোগাযোগ করব", "success");
+                reset();
             })
             .catch(err => {
                 Swal.fire("আমরা দুঃখিত", "অনুগ্রহ করে অর্ডার করার জন্য আবার চেষ্টা করুন", "error")

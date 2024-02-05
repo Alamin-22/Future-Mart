@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 
 
 
-const Video = ({ Name }) => {
+const Video = ({ Name, YtLink }) => {
     return (
         <div className=" px-2 grid grid-cols-3 gap-5">
             <div className="col-span-3 md:col-span-2 relative overflow-hidden ">
@@ -17,7 +17,7 @@ const Video = ({ Name }) => {
                 </div>
                 <iframe
                     className="w-full h-[300px] md:h-[500px]"
-                    src="https://www.youtube-nocookie.com/embed/86IkOcBAf0I?rel=0&loop=1"
+                    src={YtLink}
                     title="YouTube video player"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -42,6 +42,7 @@ const Video = ({ Name }) => {
 };
 Video.propTypes = {
     Name: PropTypes.string,
+    YtLink: PropTypes.string,
 };
 export default Video;
 
