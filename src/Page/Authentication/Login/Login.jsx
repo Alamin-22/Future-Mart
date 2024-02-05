@@ -4,12 +4,15 @@ import Swal from "sweetalert2";
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 import image from "../../../assets/Images/loginImage.jpg"
 import useAuth from "../../../Hooks/useAuth";
+import { useState } from "react";
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 
 
 const Login = () => {
     const navigate = useNavigate();
     const axiosPublic = useAxiosPublic();
     const { GoogleSingIn, Login } = useAuth()
+    const [showPassword, setShowPassword] = useState(false);
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -17,7 +20,7 @@ const Login = () => {
         const email = form.get("email");
         const password = form.get("password");
         // login
-        console.log(email, password)
+        // console.log(email, password)
 
         Login(email, password)
             .then(res => {
@@ -58,19 +61,14 @@ const Login = () => {
                     Name: res.user?.displayName,
                     photo: res.user?.photoURL,
                 }
-                Swal.fire({ title: "Success", text: "User Successfully Logged in", icon: "success" });
-                navigate("/")
+
                 axiosPublic.post("/post-user", info)
                     .then(res => {
                         if (res.data.insertedId) {
-                            Swal.fire({
-                                title: "Success",
-                                text: "User Successfully Logged in",
-                                icon: "success"
-                            });
+                            Swal.fire({ title: "Success", text: "User Successfully Logged in", icon: "success" });
                         }
-                        Swal.fire({ title: "Success", text: "User Successfully Logged in", icon: "success" });
                         navigate("/")
+                        Swal.fire({ title: "Success", text: "User Successfully Logged in", icon: "success" });
                     })
                     .catch(error => {
                         console.log(error)
@@ -121,12 +119,21 @@ const Login = () => {
                             </div>
 
                             <div className="mt-4">
-                                <div className="flex justify-between">
-                                    <label className="block mb-2 text-sm font-medium text-gray-600 " htmlFor="loggingPassword">Password</label>
-                                    <Link className="text-xs text-gray-500  hover:underline">Forget Password?</Link>
+                                <div className="relative">
+                                    <label className="label">
+                                        <span className="label-text font-medium">Password</span>
+                                    </label>
+                                    <input
+                                        type={showPassword ? "text" : "password"}
+                                        name="password"
+                                        placeholder="password"
+                                        className="input input-bordered input-accent w-full"
+                                        required
+                                    />
+                                    <span className="absolute right-3 bottom-3 cursor-pointer" onClick={() => { setShowPassword(!showPassword) }} >
+                                        {showPassword ? <AiFillEye className="text-2xl " /> : <AiFillEyeInvisible className="text-2xl " />}
+                                    </span>
                                 </div>
-
-                                <input id="loggingPassword" name="password" className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg    focus:border-[#219ebc] focus:ring-opacity-40  focus:outline-none focus:ring focus:ring-[#b7e3eeca] input-accent " placeholder="Your Password" type="password" />
                             </div>
 
                             <div className="mt-6">

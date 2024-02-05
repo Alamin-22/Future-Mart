@@ -13,12 +13,12 @@ const Home = () => {
     useEffect(() => {
         axiosPublic.get("/page1-product")
             .then(res => {
-                console.log(res.data);
+                // console.log(res.data);
                 setProduct(res.data[0])
             })
     }, [axiosPublic])
 
-    console.log(product);
+    // console.log(product);
 
 
 
