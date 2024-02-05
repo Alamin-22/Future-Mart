@@ -1,6 +1,10 @@
 import { IoIosLock } from "react-icons/io";
 import { useForm } from "react-hook-form"
 import { Element } from "react-scroll";
+import PropTypes from 'prop-types';
+
+
+
 
 
 const CheckOut = ({ Price }) => {
@@ -12,9 +16,7 @@ const CheckOut = ({ Price }) => {
 
     }
 
-
-    let price = 950;
-    let totalPrice = price + 120;
+    let totalPrice = Price + 120;
 
     return (
         <div className=" mb-10">
@@ -121,7 +123,7 @@ const CheckOut = ({ Price }) => {
                                                     </div>
                                                 </td>
                                                 <td>M14</td>
-                                                <td className="text-lg">{1}X {price} Tk</td>
+                                                <td className="text-lg">{1}X {Price} Tk</td>
                                             </tr>
                                             {/* row 2 */}
                                             <tr className="bg-zinc-200">
@@ -179,4 +181,11 @@ const CheckOut = ({ Price }) => {
     );
 };
 
+CheckOut.propTypes = {
+    Price: PropTypes.number,
+};
+
 export default CheckOut;
+
+
+
