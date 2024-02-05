@@ -52,7 +52,7 @@ const Home = () => {
                             <h2 className="text-center text-3xl text-red-600 md:text-4xl font-semibold  my-5">
                                 অর্ডার করতে সঠিক তথ্য দিয়ে নিচের ফর্ম পূরন করুন
                             </h2>
-                            <CheckOut img1={product?.img1}  Price={product?.PriceBDT}></CheckOut>
+                            <CheckOut ProductId={product?.ProductId} img1={product?.img1}  Price={product?.PriceBDT}></CheckOut>
                         </div>
                     </>
             }

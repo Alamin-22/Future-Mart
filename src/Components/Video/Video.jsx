@@ -17,7 +17,7 @@ const Video = ({ Name, YtLink }) => {
                 </div>
                 <iframe
                     className="w-full h-[300px] md:h-[500px]"
-                    src={YtLink}
+                    src={`${YtLink}`}
                     title="YouTube video player"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

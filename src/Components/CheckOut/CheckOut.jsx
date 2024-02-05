@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 
 
 
-const CheckOut = ({ Price, img1 }) => {
+const CheckOut = ({ Price, img1, ProductId }) => {
     const axiosPublic = useAxiosPublic();
     const { register, handleSubmit, watch, reset, formState: { errors } } = useForm()
 
@@ -141,7 +141,7 @@ const CheckOut = ({ Price, img1 }) => {
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td>M14</td>
+                                                <td>{ProductId}</td>
                                                 <td className="text-lg">{quantity} * {Price} Tk</td>
                                             </tr>
                                             {/* row 2 */}
