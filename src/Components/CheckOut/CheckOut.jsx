@@ -2,21 +2,34 @@ import { IoIosLock } from "react-icons/io";
 import { useForm } from "react-hook-form"
 import { Element } from "react-scroll";
 import PropTypes from 'prop-types';
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import Swal from "sweetalert2";
 
 
 
 const CheckOut = ({ Price, img1 }) => {
+    const axiosPublic = useAxiosPublic();
     const { register, handleSubmit, watch, formState: { errors } } = useForm()
 
     const onSubmit = (data) => {
-        console.log(data)
+        console.log(data);
 
+        data["TotalPrice"] = totalPrice;
+        axiosPublic.post("/post-booking", data)
+            .then(res => {
+                console.log(res.data);
+                Swal.fire("আপনার অর্ডার গ্রহণ করা হয়েছে।", "আমরা খুব শীঘ্রই আপনার সাথে যোগাযোগ করব", "success")
+            })
+            .catch(err => {
+                Swal.fire("আমরা দুঃখিত", "অনুগ্রহ করে অর্ডার করার জন্য আবার চেষ্টা করুন", "error")
+                console.log(err);
+            })
     }
 
 
     const calculateTotalPrice = (data) => {
         const QuantityInt = parseInt(data.quantity);
-        const shippingFee = parseInt(data.shippingFee) || 0; // Set default value to 0 if shippingFee is undefined
+        const shippingFee = parseInt(data.shippingFee) || 0;
         return QuantityInt * Price + shippingFee;
     };
     const quantity = watch("quantity");
@@ -25,7 +38,7 @@ const CheckOut = ({ Price, img1 }) => {
     return (
         <div className=" mb-10">
             <Element name="order" >
-                <form onChange={() => calculateTotalPrice(watch())} onSubmit={handleSubmit(onSubmit)} className="md:flex gap-3  ">
+                <form onChange={() => calculateTotalPrice(watch())} onSubmit={handleSubmit(onSubmit)} className="lg:flex gap-3  ">
                     <div className=" w-full ">
                         <div className="card shrink-0 w-full h-full  bg-base-200">
                             <div className="card-body ">
