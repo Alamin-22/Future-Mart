@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form"
 import { Element } from "react-scroll";
 
 
-const CheckOut = () => {
+const CheckOut = ({ Price }) => {
     const { register, handleSubmit, formState: { errors } } = useForm()
 
     const onSubmit = (data) => {
