@@ -63,7 +63,9 @@ const UpdateProduct = () => {
             {
                 product.length == 0 ?
                     <>
-                        <h2 className="text-5xl text-center text-red-500">loading</h2>
+                        <h2 className="text-9xl text-center text-red-500">
+                            <span className="loading loading-spinner loading-lg"></span>
+                        </h2>
                     </>
                     :
                     <>

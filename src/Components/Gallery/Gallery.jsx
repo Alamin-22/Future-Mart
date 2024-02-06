@@ -7,14 +7,18 @@ const Gallery = ({ img1, img2, img3, img4 }) => {
             <section className="py-6 dark:bg-gray-800 dark:text-gray-50">
                 <div className="container grid grid-cols-2 md:grid-cols-4 gap-4 p-4 mx-auto ">
 
-                    <img alt="Product Image" className="w-full h-full object-cover rounded shadow-sm min-h-48"
-                        src={img1} draggable={false}/>
-                    <img alt="Product Image" className="w-full h-full object-cover rounded shadow-sm min-h-48"
-                        src={img2} draggable={false}/>
-                    <img alt="Product Image" className="w-full h-full object-cover rounded shadow-sm min-h-48"
-                        src={img3} draggable={false}/>
-                    <img alt="Product Image" className="w-full h-full object-cover rounded shadow-sm min-h-48"
-                        src={img4} draggable={false}/>
+                    <img
+                        alt="Product Image"
+                        className="w-full h-full object-cover rounded shadow-sm min-h-48 hover:scale-105 transition-transform duration-300 cursor-pointer"
+                        src={img1}
+                        draggable={false}
+                    />
+                    <img alt="Product Image" className="w-full h-full object-cover rounded shadow-sm min-h-48 hover:scale-105 transition-transform duration-300 cursor-pointer"
+                        src={img2} draggable={false} />
+                    <img alt="Product Image" className="w-full h-full object-cover rounded shadow-sm min-h-48 hover:scale-105 transition-transform duration-300 cursor-pointer"
+                        src={img3} draggable={false} />
+                    <img alt="Product Image" className="w-full h-full object-cover rounded shadow-sm min-h-48 hover:scale-105 transition-transform duration-300 cursor-pointer"
+                        src={img4} draggable={false} />
                 </div>
             </section>
         </div>

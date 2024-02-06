@@ -6,7 +6,8 @@ const Navbar = () => {
 
     // const isAdmin = "admin";
     const { user, logOut } = useAuth();
-    const [isAdmin] = useAdmin();
+    const [isAdminCheck] = useAdmin();
+    const isAdmin = isAdminCheck?.admin;
     console.log(isAdmin);
 
 
@@ -42,7 +43,7 @@ const Navbar = () => {
                                                     </p>
                                                 </li>
                                                 {
-                                                    isAdmin === "admin" &&
+                                                    isAdmin &&
                                                     <>
                                                         <li><Link to={"/updateProduct"}>Update Product</Link></li>
                                                         <li><Link to={"/bookings"}>Bookings</Link></li>

@@ -69,8 +69,20 @@ const CheckOut = ({ Price, img1, ProductId }) => {
                                     <label className="label">
                                         <span className="label-text font-medium md:text-lg">আপনার মোবাইল নাম্বারটি লিখুন  <span className="text-red-600">*</span></span>
                                     </label>
-                                    <input type="number" {...register("number", { required: true })} name="number" placeholder="অনুগ্রহ করে আপনার বর্তমান ফোন নম্বর লিখুন যা সব সময় খোলা থাকবে" className="input input-bordered" />
-                                    {errors.number && <span className="text-red-500 text-center">উপরের ঘরটি অবশ্যই পূরণ করতে হবে</span>}
+                                    <input
+                                        type="tel"
+                                        {...register('number', {
+                                            required: 'আপনার চলমান ফোন নম্বর প্রদান করুন',
+                                            pattern: {
+                                                value: /^\d{11,}$/, // Regular expression for at least 11 digits
+                                                message: 'ফোন নম্বরটি কমপক্ষে 11 সংখ্যার হতে হবে',
+                                            },
+                                        })}
+                                        name="number"
+                                        placeholder="অনুগ্রহ করে আপনার বর্তমান ফোন নম্বর লিখুন যা সব সময় খোলা থাকবে"
+                                        className="input input-bordered"
+                                    />
+                                    {errors.number && <p className="text-red-600 ">{errors.number.message}</p>}
                                 </div>
                                 <div className="md:flex justify-between">
                                     <div className="form-control">
