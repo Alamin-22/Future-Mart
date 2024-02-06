@@ -22,8 +22,8 @@ const CheckOut = ({ Price, img1, ProductId }) => {
 
 
         axiosPublic.post("/post-booking", data)
-            .then(res => {
-                console.log(res.data);
+            .then(() => {
+                // console.log(res.data);
                 Swal.fire("আপনার অর্ডার গ্রহণ করা হয়েছে।", "আমরা খুব শীঘ্রই আপনার সাথে যোগাযোগ করব", "success");
                 reset();
             })

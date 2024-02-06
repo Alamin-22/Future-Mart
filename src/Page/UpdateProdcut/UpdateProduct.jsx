@@ -19,7 +19,7 @@ const UpdateProduct = () => {
                 setProduct(res.data[0])
             })
     }, [axiosPublic])
-    console.log(product);
+    // console.log(product);
 
     const HandleUpdateProduct = async (e) => {
         e.preventDefault();

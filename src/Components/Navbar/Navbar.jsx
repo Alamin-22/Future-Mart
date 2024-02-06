@@ -8,13 +8,13 @@ const Navbar = () => {
     const { user, logOut } = useAuth();
     const [isAdminCheck] = useAdmin();
     const isAdmin = isAdminCheck?.admin;
-    console.log(isAdmin);
+    // console.log(isAdmin);
 
 
 
     return (
         <div>
-            <div className="navbar bg-gray-50 shadow-xl">
+            <div className="navbar bg-gray-100 shadow-xl">
                 <div className="navbar max-w-7xl mx-auto">
                     <div className="flex-1">
                         <Link to={"/"} className="btn btn-ghost text-lg">

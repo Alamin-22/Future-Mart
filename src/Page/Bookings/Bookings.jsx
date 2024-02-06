@@ -70,69 +70,71 @@ const Bookings = () => {
                     :
                     <>
                         <div className="overflow-x-auto ">
-                            <table className="table table-zebra">
-                                <thead className="bg-slate-200 text-gray-700">
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Name</th>
-                                        <th>Product Id</th>
-                                        <th>Order Date</th>
-                                        <th>Address</th>
-                                        <th>Phone </th>
-                                        <th>Size & Quantity</th>
-                                        <th>Area</th>
-                                        <th>Total Price</th>
-                                        <th>Cancel</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {Bookings?.map((reserved, idx) => (
-                                        <tr key={reserved._id}>
-                                            <th>{idx + 1}</th>
-                                            <td>{reserved?.name}</td>
-                                            <td className="text-blue-500 hover:underline cursor-pointer">
-                                                {reserved?.ProductId}
-                                            </td>
-
-                                            <td>
-                                                {reserved?.OrderDate}
-                                            </td>
-                                            <td>
-                                                {reserved?.address}
-                                            </td>
-                                            <td>
-                                                {reserved?.number}
-                                            </td>
-
-                                            <td>
-                                                {reserved?.size} & {reserved?.quantity}
-                                            </td>
-
-
-                                            <td>
-                                                {
-                                                    reserved?.shippingFee == 60 ?
-                                                        <>
-                                                            <p className="font-medium">Dhaka</p>
-                                                        </>
-                                                        :
-                                                        <>
-                                                            <p className="font-medium">Out Side Dhaka</p>
-                                                        </>
-                                                }
-                                            </td>
-                                            <td>
-                                                {reserved?.TotalPrice} Tk
-                                            </td>
-                                            <td>
-                                                <button onClick={() => handleCancelBooking(reserved)}>
-                                                    <MdDeleteForever className=" text-red-600 text-3xl active:text-2xl" />
-                                                </button>
-                                            </td>
+                            <div className="min-w-full overflow-hidden overflow-x-scroll">
+                                <table className="table table-zebra table-auto w-full">
+                                    <thead className="bg-slate-200 text-gray-700">
+                                        <tr>
+                                            <th>No</th>
+                                            <th><span className="text-slate-200">Name </span>Name <span className="text-slate-200">NameName</span></th>
+                                            <th>Product Id</th>
+                                            <th>Order Date</th>
+                                            <th ><span className="text-slate-200">Address</span> Address<span className="text-slate-200">Address</span> </th>
+                                            <th>Phone </th>
+                                            <th>Size & Quantity</th>
+                                            <th> Area<span className="text-slate-200">AreaArea</span></th>
+                                            <th>Total Price</th>
+                                            <th>Delete</th>
                                         </tr>
-                                    ))}
-                                </tbody>
-                            </table>
+                                    </thead>
+                                    <tbody>
+                                        {Bookings?.map((reserved, idx) => (
+                                            <tr key={reserved._id}>
+                                                <th>{idx + 1}</th>
+                                                <td>{reserved?.name}</td>
+                                                <td className="text-blue-500 hover:underline cursor-pointer">
+                                                    {reserved?.ProductId}
+                                                </td>
+
+                                                <td>
+                                                    {reserved?.OrderDate}
+                                                </td>
+                                                <td className="w-full sm:w-96 lg:w-80">
+                                                    {reserved?.address}
+                                                </td>
+                                                <td>
+                                                    {reserved?.number}
+                                                </td>
+
+                                                <td>
+                                                    {reserved?.size} & {reserved?.quantity}
+                                                </td>
+
+
+                                                <td>
+                                                    {
+                                                        reserved?.shippingFee == 60 ?
+                                                            <>
+                                                                <p className="font-medium">Dhaka</p>
+                                                            </>
+                                                            :
+                                                            <>
+                                                                <p className="font-medium">Out Side Dhaka</p>
+                                                            </>
+                                                    }
+                                                </td>
+                                                <td>
+                                                    {reserved?.TotalPrice} Tk
+                                                </td>
+                                                <td>
+                                                    <button onClick={() => handleCancelBooking(reserved)}>
+                                                        <MdDeleteForever className=" text-red-600 text-3xl active:text-2xl" />
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </>
             }

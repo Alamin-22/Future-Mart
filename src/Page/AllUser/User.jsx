@@ -68,8 +68,8 @@ const User = () => {
                         <tr>
                             <th>No</th>
                             <th>Photo</th>
-                            <th >Name</th>
-                            <th>Email</th>
+                            <th ><span className="text-slate-200">Name </span>Name <span className="text-slate-200">NameName</span></th>
+                            <th><span className="text-slate-200">Name Email Email </span> Email<span className="text-slate-200">Name</span> </th>
                             <th>Role</th>
                             <th>Delete</th>
                         </tr>
@@ -88,8 +88,8 @@ const User = () => {
 
 
                                 </td>
-                                <td >{user?.Name}</td>
-                                <td className="text-blue-500 hover:underline cursor-pointer">
+                                <td className="">{user?.Name}</td>
+                                <td className="text-blue-500 hover:underline  cursor-pointer">
                                     {user?.email}
                                 </td>
 

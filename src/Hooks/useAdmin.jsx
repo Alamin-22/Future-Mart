@@ -9,12 +9,13 @@ const useAdmin = () => {
         queryKey: [user?.email, "isAdmin"],
         queryFn: async () => {
             const res = await axiosPublic.get(`/users/admin/${user.email}`);
-            console.log(res.data);
+            // console.log(res.data);
 
             // Return the data you want to use in your component
             return res.data; // Assuming res.data contains the isAdmin value
         }
     });
+
 
     return [isAdmin, adminLoading];
 };
