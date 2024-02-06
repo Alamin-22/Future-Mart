@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const Gallery = ({ img1, img2, img3, img4 }) => {
     return (
         <div>
-            <section className="py-6 dark:bg-gray-800 dark:text-gray-50">
+            <section className="py-6 ">
                 <div className="container grid grid-cols-2 md:grid-cols-4 gap-4 p-4 mx-auto ">
 
                     <img
