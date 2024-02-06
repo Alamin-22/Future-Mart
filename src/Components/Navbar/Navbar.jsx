@@ -22,11 +22,10 @@ const Navbar = () => {
                             Future Mart
                         </Link>
                     </div>
-
                     <div className="flex-none">
 
                         <div>
-
+                        
                             {
                                 user ?
                                     <>
@@ -60,9 +59,9 @@ const Navbar = () => {
                                     </>
                                     :
                                     <>
-                                        <Link to={"/singIn"}>
+                                        {/* <Link to={"/singIn"}>
                                             <div className="btn btn-outline btn-sm">Login</div>
-                                        </Link>
+                                        </Link> */}
                                     </>
                             }
                         </div>
