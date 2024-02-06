@@ -141,7 +141,7 @@ const SignUp = () => {
                             <div className="form-control mt-6">
                                 <button type="submit" className="btn bg-[#219ebc] hover:bg-[#3c738f] border-none text-white">Register</button>
                             </div>
-                            <p className="text-center">Already have an account? <Link to={"/singIn"} className="font-semibold text-blue-600 underline" >LogIn</Link> </p>
+                            <p className="text-center">Already have an account? <Link to={"/ripon-login"} className="font-semibold text-blue-600 underline" >LogIn</Link> </p>
                         </form>
                     </div>
                 </div>

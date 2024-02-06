@@ -29,7 +29,7 @@ const Navbar = () => {
                             {
                                 user ?
                                     <>
-                                        <div className="dropdown dropdown-end">
+                                        <div className="dropdown dropdown-end z-20">
                                             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                                 <div className="w-10 rounded-full">
                                                     <img alt="Tailwind CSS Navbar component" src={user?.photoURL} />
@@ -59,7 +59,7 @@ const Navbar = () => {
                                     </>
                                     :
                                     <>
-                                        {/* <Link to={"/singIn"}>
+                                        {/* <Link to={"/ripon-login"}>
                                             <div className="btn btn-outline btn-sm">Login</div>
                                         </Link> */}
                                     </>

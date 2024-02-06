@@ -10,6 +10,7 @@ import Dashboard from "../Page/Dashboard/Dashboard";
 import UpdateProduct from "../Page/UpdateProdcut/UpdateProduct";
 import User from "../Page/AllUser/User";
 import Bookings from "../Page/Bookings/Bookings";
+import PrivateRoute from "../Private/PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -27,25 +28,25 @@ const router = createBrowserRouter([
             },
             {
                 path: "/updateProduct",
-                element: <UpdateProduct></UpdateProduct>
+                element: <PrivateRoute><UpdateProduct /></PrivateRoute>,
             },
             {
                 path: "/allUsers",
-                element: <User />,
+                element: <PrivateRoute><User /></PrivateRoute>,
             },
             {
                 path: "/bookings",
-                element: <Bookings />
+                element: <PrivateRoute><Bookings /></PrivateRoute>
             }
         ]
     },
 
     {
-        path: "/singIn",
+        path: "/ripon-login",
         element: <Login></Login>
     },
     {
-        path: "/singUp",
+        path: "/ripon-singUp",
         element: <SignUp></SignUp>
     }
 ]);

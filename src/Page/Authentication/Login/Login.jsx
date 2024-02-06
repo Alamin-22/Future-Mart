@@ -147,7 +147,7 @@ const Login = () => {
 
                         <div className="flex items-center justify-between mt-4">
                             <span className="w-1/5 border-b  md:w-1/4"></span>
-                            <Link to={"/singUp"} className="text-sm text-gray-700 font-medium uppercase ">or <span className="text-blue-700">sign up</span></Link>
+                            <Link to={"/ripon-singUp"} className="text-sm text-gray-700 font-medium uppercase ">or <span className="text-blue-700">sign up</span></Link>
                             <Link to={"/"} className="text-sm text-gray-700 font-medium uppercase ">or <span className="text-red-600">Go Home</span></Link>
 
                             <span className="w-1/5 border-b  md:w-1/4"></span>
