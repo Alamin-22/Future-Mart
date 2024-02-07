@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import logo from "../../assets/Images/logo-removebg-preview.png"
 import useAdmin from "../../Hooks/useAdmin";
+import SocialLinks from "../SocialLinks/SocialLinks";
 const Navbar = () => {
 
     // const isAdmin = "admin";
@@ -22,10 +23,10 @@ const Navbar = () => {
                             Future Group
                         </Link>
                     </div>
-                    <div className="flex-none">
+                    <div className="flex-none gap-3">
 
+                        <SocialLinks></SocialLinks>
                         <div>
-                        
                             {
                                 user ?
                                     <>

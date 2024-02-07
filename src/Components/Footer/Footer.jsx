@@ -1,11 +1,9 @@
-import { FaFacebookSquare } from "react-icons/fa";
-import { Link } from "react-router-dom";
 import logo from "../../assets/Images/logo-removebg-preview.png"
-import { IoLogoYoutube } from "react-icons/io";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { AiTwotoneMail } from "react-icons/ai";
 import { FaLink } from "react-icons/fa6";
+import SocialLinks from "../SocialLinks/SocialLinks";
 
 const Footer = () => {
     return (
@@ -19,20 +17,12 @@ const Footer = () => {
                     <p>Copyright © 2024 - All right reserved</p>
                 </aside>
                 <nav>
-                    <div className="grid grid-flow-col gap-4">
-                        <Link target="_blank" to={"https://www.facebook.com/profile.php?id=100064576424047&mibextid=ZbWKwL"}>
-                            <FaFacebookSquare className="transition cursor-pointer duration-300 delay-100 hover:text-blue-600 text-3xl" />
-                        </Link>
-                        <Link target="_blank" to={"https://www.youtube.com/@riponahmed9468/videos"}>
-                            <IoLogoYoutube className="transition cursor-pointer duration-300 delay-100 hover:text-red-600 text-3xl" />
-                        </Link>
-                    </div>
-
+                    <SocialLinks></SocialLinks>
                 </nav>
             </footer>
             <div className="bg-gray-200">
                 <div className="border-b-2 border-gray-50"></div>
-                <div className="flex flex-col md:flex-row justify-between max-w-6xl mx-auto items-center">
+                <div className="flex flex-col md:flex-row justify-between py-3 max-w-6xl mx-auto items-center">
                     <p className="font-medium text-center md:text-left">Developed by <br />Md. Al Amin Mollik</p>
                     <p className=" flex items-center justify-center gap-2 font-medium">Lets build your Dream Website together  <FaLongArrowAltRight /></p>
                     <div className="flex gap-2">
