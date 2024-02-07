@@ -14,7 +14,7 @@ const Footer = () => {
                 <aside>
                     <img className="w-20 h-20" src={logo} alt="logo" />
                     <p className="font-semibold text-xl">
-                        Future Mart LTD. <br />Providing reliable cloth since 2018
+                        Future Group LTD. <br />Providing reliable cloth since 2018
                     </p>
                     <p>Copyright © 2024 - All right reserved</p>
                 </aside>
