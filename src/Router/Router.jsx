@@ -11,6 +11,7 @@ import UpdateProduct from "../Page/UpdateProdcut/UpdateProduct";
 import User from "../Page/AllUser/User";
 import Bookings from "../Page/Bookings/Bookings";
 import PrivateRoute from "../Private/PrivateRoute";
+import Home2 from "../Page/Home2/Home2";
 
 const router = createBrowserRouter([
     {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>,
+            },
+            {
+                path: "/product2",
+                element: <Home2></Home2>
             },
             {
                 path: "/dash-board",
