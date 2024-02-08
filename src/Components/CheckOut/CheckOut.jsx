@@ -70,7 +70,7 @@ const CheckOut = ({ Price, img1, ProductId }) => {
                                         <span className="label-text font-medium md:text-lg">আপনার মোবাইল নাম্বারটি লিখুন  <span className="text-red-600">*</span></span>
                                     </label>
                                     <input
-                                        type="tel"
+                                        type="number"
                                         {...register('number', {
                                             required: 'আপনার চলমান ফোন নম্বর প্রদান করুন',
                                             pattern: {
